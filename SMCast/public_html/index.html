@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>SM Casting</title>
+        
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body class="container">
+        <script src="https://static.opentok.com/v2/js/opentok.js" charset="utf-8"></script>
+        <script charset="utf-8">
+          var apiKey = '45635532';
+          var sessionId = '1_MX40NTYzNTUzMn5-MTQ3MDgzNTA1MTQ3OH44Z3E0Y0Q4THRVQ3dWbHU1K2Q2WDY3M1R-fg';
+          var token = 'T1==cGFydG5lcl9pZD00NTYzNTUzMiZzaWc9YzRmMTg5ODljZDU3Y2NkYzJiMjBiODVkMzUwNWQ3OGEzZmRjMGE4MjpzZXNzaW9uX2lkPTFfTVg0ME5UWXpOVFV6TW41LU1UUTNNRGd6TlRBMU1UUTNPSDQ0WjNFMFkwUTRUSFJWUTNkV2JIVTFLMlEyV0RZM00xUi1mZyZjcmVhdGVfdGltZT0xNDcwODM1MDk4Jm5vbmNlPTAuMTk1MDU0MDIzMjkzNzc4MyZyb2xlPXB1Ymxpc2hlciZleHBpcmVfdGltZT0xNDczNDI3MDk3';
+          var session = OT.initSession(apiKey, sessionId)
+            .on('streamCreated', function(event) {
+              session.subscribe(event.stream);
+            })
+            .connect(token, function(error) {
+              var publisher = OT.initPublisher();
+              session.publish(publisher);
+            });
+        </script>
+    </body>
+</html>
