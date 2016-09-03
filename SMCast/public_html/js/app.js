@@ -36,6 +36,12 @@
     });
 
     app.controller('PublisherController', ['$http', function ($http) {
-        }]);
+            
+    }]);
+
+    app.controller('SubscriberController', ['$http', function ($http) {
+            
+    }]);
+
 
 })();
