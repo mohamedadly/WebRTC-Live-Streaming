@@ -1,5 +1,5 @@
 (function () {
-    var app = angular.module('admin', ['ngAnimate', 'ngRoute']);
+    var app = angular.module('casting', ['ngAnimate', 'ngRoute']);
 
 
     // configure our routes
