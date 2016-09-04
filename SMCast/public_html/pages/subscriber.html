@@ -1,3 +1,24 @@
-<div ng-controller="SubscriberController as Sub">
-    <h2>Subscribe</h2>
+<div ng-controller="SubscriberController as Sub" ng-init="Sub.init()">
+    <h2>Subscribe to a broadcast</h2>
+    <table class="table table-condensed" style="border-collapse:collapse;">
+        <thead>
+            <tr>
+                <th>Stream ID</th>
+                <th>Description</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Repeatable Section -->
+             <tr ng-repeat-start="stream in Sub.streams">
+                  <td>{{stream.id}}</td>
+                    <td>{{stream.name}}</td>
+                    <td>
+                        <button class="btn btn-default btn-xs" ng-click="Sub.viewStream(stream.id)">
+                            <span class="glyphicon glyphicon-play"></span>
+                        </button>
+                    </td>
+             </tr>
+        </tbody>
+    </table>
 </div>
