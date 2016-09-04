@@ -40,7 +40,7 @@
             var publisher = this;
             
             publisher.startLiveStream = function (){
-                alert('gone');
+               jqcc.ccbroadcast.init('0');
             };
             
     }]);
