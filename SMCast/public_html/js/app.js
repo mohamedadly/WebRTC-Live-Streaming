@@ -61,7 +61,7 @@
             };
             
             subscriber.viewStream = function(streamID){
-              alert(streamID);  
+              jqcc.ccbroadcast.accept('0',streamID);  
             };
     }]);
 
