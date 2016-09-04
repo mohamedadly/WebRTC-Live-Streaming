@@ -37,6 +37,12 @@
 
     app.controller('PublisherController', ['$http', function ($http) {
             
+            var publisher = this;
+            
+            publisher.startLiveStream = function (){
+                alert('gone');
+            };
+            
     }]);
 
     app.controller('SubscriberController', ['$http', function ($http) {
