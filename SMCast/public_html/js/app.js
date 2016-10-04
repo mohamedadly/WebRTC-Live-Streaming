@@ -70,11 +70,10 @@
 
     app.controller('ChatController',  ['$http', function ($http) {
             var chat = this;
-            var userID = '0';
             
             chat.chatwith = function(user){
                 alert(user);
-                jqcc.cometchat.chatWith(user);
+                //jqcc.cometchat.chatWith(user);
             };
     }]);
 
