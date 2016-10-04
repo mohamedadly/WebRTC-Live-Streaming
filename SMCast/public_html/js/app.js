@@ -72,8 +72,7 @@
             var chat = this;
             
             chat.chatwith = function(user){
-                alert(user);
-                //jqcc.cometchat.chatWith(user);
+                jqcc.cometchat.chatWith(user);
             };
     }]);
 
