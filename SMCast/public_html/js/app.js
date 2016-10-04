@@ -16,6 +16,9 @@
         }).when('/sub', {
             templateUrl: '/cast/pages/subscriber.html',
             controller: 'SubscriberController'
+        }).when('/chat', {
+            templateUrl: '/cast/pages/chat.html',
+            controller: 'ChatController'
         }).
                 otherwise({
                     redirectTo: '/'
@@ -62,6 +65,15 @@
             
             subscriber.viewStream = function(streamID){
               jqcc.ccbroadcast.accept('0',streamID);  
+            };
+    }]);
+
+    app.controller('ChatController',  ['$http', function ($http) {
+            var chat = this;
+            var userID = '0';
+            
+            chat.chatwith = function(user){
+                jqcc.cometchat.chatWith(user);
             };
     }]);
 
