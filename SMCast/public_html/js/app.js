@@ -73,6 +73,7 @@
             var userID = '0';
             
             chat.chatwith = function(user){
+                alert(user);
                 jqcc.cometchat.chatWith(user);
             };
     }]);
