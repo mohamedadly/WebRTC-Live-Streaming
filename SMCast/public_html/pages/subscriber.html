@@ -1,24 +1,9 @@
-<div ng-controller="SubscriberController as Sub" ng-init="Sub.init()">
+<div ng-controller="SubscriberController as Sub">
     <h2>Subscribe to a broadcast</h2>
-    <table class="table table-condensed" style="border-collapse:collapse;">
-        <thead>
-            <tr>
-                <th>Stream ID</th>
-                <th>Description</th>
-                <th>&nbsp;</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Repeatable Section -->
-             <tr ng-repeat="stream in Sub.streams">
-                  <td>{{stream.id}}</td>
-                    <td>{{stream.name}}</td>
-                    <td>
-                        <button class="btn btn-default btn-xs" ng-click="Sub.viewStream(stream.id)">
-                            <span class="glyphicon glyphicon-play"></span>
-                        </button>
-                    </td>
-             </tr>
-        </tbody>
-    </table>
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="enter session id here..." ng-model="Sub.sid">
+      <span class="input-group-btn">
+          <button class="btn btn-default" type="button" ng-click="Sub.viewStream(Sub.sid)">Go!</button>
+      </span>
+    </div>
 </div>

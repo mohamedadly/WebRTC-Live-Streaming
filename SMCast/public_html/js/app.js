@@ -53,18 +53,6 @@
 
     app.controller('SubscriberController', ['$http', function ($http) {
             var subscriber = this;
-            subscriber.streams = [];
-            
-            subscriber.init = function () {
-                $http({
-                    method: 'GET',
-                    url: '/php/getbroadcasts.php'
-                }).then(function successCallback(response) {
-                    subscriber.streams = response.data;
-                }, function errorCallback(response) {
-                    alert('error fetching broadcasts');
-                });
-            };
             
             subscriber.viewStream = function(streamID){
               jqcc.ccbroadcast.accept('0',streamID);  
