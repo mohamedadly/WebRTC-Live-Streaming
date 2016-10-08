@@ -43,11 +43,10 @@
             var publisher = this;
             
             publisher.startLiveStream = function (){
-                var params;
-                params.chatroommode= 0;
-                params.to = 0;
-                params.session = 'averyfuckinglongstringandhashedalsoformoresecurity';
-               jqcc.ccbroadcast.init('0');
+                var params = {"chatroommode":"0",
+                "to": "0",
+                "session" :"averyfuckinglongstringandhashedalsoformoresecurity"};
+               jqcc.ccbroadcast.init(params);
             };
             
     }]);
