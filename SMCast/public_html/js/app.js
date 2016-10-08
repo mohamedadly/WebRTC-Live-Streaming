@@ -55,7 +55,9 @@
             var subscriber = this;
             
             subscriber.viewStream = function(streamID){
-              jqcc.ccbroadcast.accept('0',streamID);  
+                var params = {"to": "0",
+                "grp" :streamID};
+              jqcc.ccbroadcast.accept(params);  
             };
     }]);
 
