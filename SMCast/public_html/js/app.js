@@ -45,7 +45,7 @@
             publisher.startLiveStream = function (){
                 var params = {"chatroommode":"0",
                 "to": "0",
-                "session" :"averyfuckinglongstringandhashedalsoformoresecurity"};
+                "session" :"ddbaba372e67bf5137c11c1db21c320e"};
                jqcc.ccbroadcast.init(params);
             };
             
