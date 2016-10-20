@@ -1,2 +1,3 @@
-# web_casting
-Mockup of webcasting experience with OpenTok
+# WebRTC Demo
+
+WebRTC application from Google Codelabs for WebRTC
