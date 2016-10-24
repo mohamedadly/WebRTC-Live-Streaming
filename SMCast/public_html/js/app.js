@@ -8,16 +8,16 @@
 
                 // route for the home page
                 .when('/', {
-                    templateUrl: '/pages/default.html',
+                    templateUrl: 'pages/default.html',
                     controller: 'DefaultController'
                 }).when('/pub', {
-            templateUrl: '/pages/publisher.html',
+            templateUrl: 'pages/publisher.html',
             controller: 'PublisherController'
         }).when('/sub', {
-            templateUrl: '/pages/subscriber.html',
+            templateUrl: 'pages/subscriber.html',
             controller: 'SubscriberController'
         }).when('/chat', {
-            templateUrl: '/pages/chat.html',
+            templateUrl: 'pages/chat.html',
             controller: 'ChatController'
         }).
                 otherwise({
