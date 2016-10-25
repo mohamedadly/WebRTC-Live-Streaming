@@ -13,8 +13,8 @@
     </head>
     <body class="container">
 
-        <div class="jumbotron">
-            <video id="local-media" autoplay></video>
+        <div>
+            <video id="local-media" autoplay style="width: 100%; height: 100%"></video>
             <div id="errorMsg"></div>
         </div>
 
@@ -24,8 +24,8 @@
             var video = document.querySelector('video');
             
             var constraints = window.constraints = {
-                audio: true,
-                 video: { width: 100, height: 100 }
+                audio: false,
+                 video: true
             };
             
             function handleSuccess(stream) {
