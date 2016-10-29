@@ -13,13 +13,15 @@
         <!-- AngularJS -->
         <script type="text/javascript" src="js/angular.js"></script>
         
-        <!-- cometchat -->
-        <link type="text/css" href="/cometchat/cometchatcss.php" rel="stylesheet" charset="utf-8">
-        <script type="text/javascript" src="/cometchat/cometchatjs.php" charset="utf-8"></script>
+         <!-- WebRTC Adapter -->
+        <script type="text/javascript" src="js/adapter.js"></script>
+        
+         <!-- Kurento -->
+        <script type="text/javascript" src="js/kurento-utils.min.js"></script>
     </head>
     <body class="container">
  
-         <h3>Live Streaming Demo Using Cometchat/WebRTC</h3>
+         <h3>Live Streaming Demo Using Kurento/WebRTC</h3>
          <!-- Main Content -->
          <div class="jumbotron">
              <div ng-view></div>
@@ -28,8 +30,7 @@
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/angular-animate.min.js"></script>
+        <script src="js/bootstrap.js"></script>
         <script type="text/javascript" src="js/angular-route.min.js"></script>
         <script type="text/javascript" src="js/app.js"></script>
     </body>
