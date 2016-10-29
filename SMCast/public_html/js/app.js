@@ -16,9 +16,6 @@
             case 'presenterResponse':
                 presenterResponse(parsedMessage);
                 break;
-            case 'viewerResponse':
-                viewerResponse(parsedMessage);
-                break;
             case 'stopCommunication':
                 dispose();
                 break;
@@ -38,32 +35,14 @@
             webRtcPeer.processAnswer(message.sdpAnswer);
         }
     }
-    function viewerResponse(message) {
-        if (message.response != 'accepted') {
-            var errorMsg = message.message ? message.message : 'Unknow error';
-            console.warn('Call not accepted for the following reason: ' + errorMsg);
-            dispose();
-        } else {
-            webRtcPeer.processAnswer(message.sdpAnswer);
-        }
-    }
     function onOfferPresenter(error, offerSdp) {
         if (error)
             return onError(error);
 
         var message = {
             id: 'presenter',
-            sdpOffer: offerSdp
-        };
-        sendMessage(message);
-    }
-    function onOfferViewer(error, offerSdp) {
-        if (error)
-            return onError(error);
-
-        var message = {
-            id: 'viewer',
-            sdpOffer: offerSdp
+            sdpOffer: offerSdp,
+            session: 'averygoodsessionid'
         };
         sendMessage(message);
     }
@@ -80,7 +59,9 @@
     function stop() {
         if (webRtcPeer) {
             var message = {
-                id: 'stop'
+                id: 'stop',
+                session: 'averygoodsession',
+                presenter: '1'
             };
             sendMessage(message);
             dispose();
@@ -142,7 +123,7 @@
                     var options = {
                         localVideo: video,
                         onicecandidate: onIceCandidate
-                    }
+                    };
 
                     webRtcPeer = kurentoUtils.WebRtcPeer.WebRtcPeerSendonly(options, function (error) {
                         if (error)
