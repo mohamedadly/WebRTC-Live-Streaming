@@ -23,7 +23,7 @@
                 dispose();
                 break;
             case 'iceCandidate':
-                webRtcPeer.addIceCandidate(parsedMessage.candidate)
+                webRtcPeer.addIceCandidate(parsedMessage.candidate);
                 break;
             default:
                 console.error('Unrecognized message', parsedMessage);
@@ -53,6 +53,16 @@
 
         var message = {
             id: 'presenter',
+            sdpOffer: offerSdp
+        };
+        sendMessage(message);
+    }
+    function onOfferViewer(error, offerSdp) {
+        if (error)
+            return onError(error);
+
+        var message = {
+            id: 'viewer',
             sdpOffer: offerSdp
         };
         sendMessage(message);
@@ -149,8 +159,8 @@
             var subscriber = this;
 
             subscriber.viewStream = function (streamID) {
-                
+
             };
         }]);
-    
+
 })();
