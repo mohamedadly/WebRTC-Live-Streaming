@@ -4,6 +4,7 @@
 
     //Kurento WS
     var ws = new WebSocket('wss://' + 'kms.searchandmap.com:8443' + '/cast');
+    var sessionID = Date.now().toString();
     var webRtcPeer;
     window.onbeforeunload = function () {
         ws.close();
@@ -42,7 +43,7 @@
         var message = {
             id: 'presenter',
             sdpOffer: offerSdp,
-            session: 'averygoodsessionid'
+            session: sessionID
         };
         sendMessage(message);
     }
@@ -60,7 +61,7 @@
         if (webRtcPeer) {
             var message = {
                 id: 'stop',
-                session: 'averygoodsession',
+                session: sessionID,
                 presenter: '1'
             };
             sendMessage(message);
@@ -117,6 +118,8 @@
 
             var publisher = this;
             var video = document.getElementById('localvideo');
+            
+            console.log("SESSION ID: " + sessionID);
 
             publisher.startLiveStream = function () {
                 if (!webRtcPeer) {
