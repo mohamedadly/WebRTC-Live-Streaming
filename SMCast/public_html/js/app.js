@@ -1,5 +1,5 @@
 (function () {
-    var app = angular.module('casting', ['ngAnimate', 'ngRoute']);
+    var app = angular.module('casting', ['ngRoute']);
 
 
     //Kurento WS
