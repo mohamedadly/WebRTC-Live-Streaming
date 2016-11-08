@@ -4,7 +4,6 @@
 
     //Kurento WS
     var ws = new WebSocket('wss://' + 'kms.searchandmap.com:8443' + '/cast');
-    var sessionID = Date.now().toString();
     var webRtcPeer;
     window.onbeforeunload = function () {
         ws.close();
@@ -28,7 +27,7 @@
         }
     };
     function presenterResponse(message) {
-        if (message.response != 'accepted') {
+        if (message.response !== 'accepted') {
             var errorMsg = message.message ? message.message : 'Unknow error';
             console.warn('Call not accepted for the following reason: ' + errorMsg);
             dispose();
@@ -40,6 +39,8 @@
         if (error)
             return onError(error);
 
+        var sessionID = Date.now().toString();
+        console.log('SESSION ID = ' + sessionID);
         var message = {
             id: 'presenter',
             sdpOffer: offerSdp,
@@ -117,8 +118,7 @@
             var publisher = this;
             var video = document.getElementById('localvideo');
             
-            console.log("SESSION ID: " + sessionID);
-
+            
             publisher.startLiveStream = function () {
                 if (!webRtcPeer) {
                     var options = {
