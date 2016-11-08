@@ -57,12 +57,10 @@
         sendMessage(message);
     }
 
-    function stop() {
+    function stopStream() {
         if (webRtcPeer) {
             var message = {
-                id: 'stop',
-                session: sessionID,
-                presenter: '1'
+                id: 'stop'
             };
             sendMessage(message);
             dispose();
@@ -135,6 +133,10 @@
                         this.generateOffer(onOfferPresenter);
                     });
                 }
+            };
+            
+            publisher.stopLiveStream = function (){
+                stopStream();
             };
 
         }]);
