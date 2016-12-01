@@ -1,0 +1,13 @@
+{
+    "name": "smcast",
+    "version": "1.0.0",
+    "main": "path/to/main.css",
+    "ignore": [
+        ".jshintrc", "**/*.txt"
+    ],
+    "dependencies": {
+        "adapter.js":"*",
+        "webrtc-adapter":"*",
+        "kurento-utils":"*"
+    }
+}
